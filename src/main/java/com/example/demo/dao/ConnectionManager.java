@@ -1,14 +1,13 @@
 package com.example.demo.dao;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Properties;
 
 public final class ConnectionManager {
-
-    private static final String URL = "jdbc:mysql://localhost:8889/islands";
-    private static final String USER = "root";
-    private static final String PASSWORD = "root";
 
     private static Connection CONNECTION_SINGLETON = null;
 
@@ -20,10 +19,17 @@ public final class ConnectionManager {
         if (CONNECTION_SINGLETON == null) {
             try {
                 loadDriver();
-                CONNECTION_SINGLETON = DriverManager.getConnection(URL, USER, PASSWORD);
+                InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("dbconfig.properties");
+                Properties properties = new Properties();
+                properties.load(inputStream);
+
+                CONNECTION_SINGLETON = DriverManager.getConnection(properties.getProperty("db.url"), properties.getProperty("db.username"), properties.getProperty("db.password"));
             } catch (SQLException e) {
                 e.printStackTrace();
                 System.err.println("Connexion impossible");
+            } catch (IOException e) {
+                e.printStackTrace();
+                System.err.println("dbconfig.properties introuvable");
             }
         }
         return CONNECTION_SINGLETON;

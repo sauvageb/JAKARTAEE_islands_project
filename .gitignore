@@ -1,3 +1,6 @@
+### Ignore properties
+**/dbconfig.properties
+
 ### Mac OS X
 **/.DS_Store
 *.DS_Store
