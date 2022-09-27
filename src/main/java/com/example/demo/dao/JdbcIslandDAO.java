@@ -75,7 +75,12 @@ public class JdbcIslandDAO implements IslandDAO {
         long id = rs.getLong("id");
         String name = rs.getString("name");
         String pictureUrl = rs.getString("picture_url");
-        return new Island(id, name, pictureUrl, 0, 0, 0, 0, "");
+        double surface = rs.getDouble("surface");
+        long inhabitants = rs.getLong("inhabitants");
+        double latitude = rs.getDouble("latitude");
+        double longitude = rs.getDouble("longitude");
+        String country = rs.getString("country");
+        return new Island(id, name, pictureUrl, surface, inhabitants, latitude, longitude, country);
     }
 
     @Override

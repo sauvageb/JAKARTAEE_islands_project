@@ -6,7 +6,7 @@ public class Island {
     private String name;
     private String pictureUrl;
     private double surface;
-    private double inhabitants;
+    private long inhabitants;
     private double latitude;
     private double longitude;
     private String country;
@@ -14,7 +14,7 @@ public class Island {
     public Island() {
     }
 
-    public Island(String name, String pictureUrl, double surface, double inhabitants, double latitude, double longitude, String country) {
+    public Island(String name, String pictureUrl, double surface, long inhabitants, double latitude, double longitude, String country) {
         this.name = name;
         this.pictureUrl = pictureUrl;
         this.surface = surface;
@@ -24,7 +24,7 @@ public class Island {
         this.country = country;
     }
 
-    public Island(long id, String name, String pictureUrl, double surface, double inhabitants, double latitude, double longitude, String country) {
+    public Island(long id, String name, String pictureUrl, double surface, long inhabitants, double latitude, double longitude, String country) {
         this.id = id;
         this.name = name;
         this.pictureUrl = pictureUrl;
@@ -81,11 +81,11 @@ public class Island {
         this.surface = surface;
     }
 
-    public double getInhabitants() {
+    public long getInhabitants() {
         return inhabitants;
     }
 
-    public void setInhabitants(double inhabitants) {
+    public void setInhabitants(long inhabitants) {
         this.inhabitants = inhabitants;
     }
 

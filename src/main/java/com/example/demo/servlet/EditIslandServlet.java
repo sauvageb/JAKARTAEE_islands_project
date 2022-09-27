@@ -34,8 +34,21 @@ public class EditIslandServlet extends HttpServlet {
 
         String name = req.getParameter("name");
         String pictureUrl = req.getParameter("pictureUrl");
+        String surface = req.getParameter("surface");
+        String inhabitants = req.getParameter("inhabitants");
+        String latitude = req.getParameter("latitude");
+        String longitude = req.getParameter("longitude");
+        String country = req.getParameter("country");
 
-        DaoFactory.getIslandDAO().edit(new Island(id, name, pictureUrl, 0, 0, 0, 0, ""));
+        DaoFactory.getIslandDAO().edit(new Island(
+                id,
+                name,
+                pictureUrl,
+                Double.parseDouble(surface),
+                Long.parseLong(inhabitants),
+                Double.parseDouble(latitude),
+                Double.parseDouble(longitude),
+                country));
 
         resp.sendRedirect(req.getContextPath() + "/islands");
     }

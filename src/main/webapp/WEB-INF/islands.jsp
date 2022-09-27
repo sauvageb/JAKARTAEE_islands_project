@@ -9,12 +9,12 @@
 </head>
 <body>
 
+<jsp:include page="header.jsp"></jsp:include>
 
-<div class="container">
+
+<div class="container mt-4">
 
     <h1>Islands :</h1>
-
-    <a href="${pageContext.request.contextPath}/islands/add">Add Island</a>
 
     <div class="row">
         <c:forEach items="${islands}" var="island">
@@ -28,6 +28,9 @@
                     </div>
                     <div class="card-footer d-flex justify-content-end">
 
+                        <a href="${pageContext.request.contextPath}/details?id=${island.id}"
+                           class="btn btn-success me-2">Details</a>
+
                         <a href="${pageContext.request.contextPath}/edit?id=${island.id}" class="btn btn-primary me-2">Edit</a>
 
                         <form action="${pageContext.request.contextPath}/delete-island" method="post" class="m-0">
@@ -39,10 +42,9 @@
             </div>
         </c:forEach>
     </div>
-
-
 </div>
 
+<jsp:include page="footer.jsp"></jsp:include>
 
 </body>
 </html>
