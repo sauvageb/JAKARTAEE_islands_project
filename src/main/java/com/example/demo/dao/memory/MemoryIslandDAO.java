@@ -1,5 +1,7 @@
-package com.example.demo.dao;
+package com.example.demo.dao.memory;
 
+import com.example.demo.dao.IslandDAO;
+import com.example.demo.dao.entity.Country;
 import com.example.demo.model.Island;
 
 import java.util.ArrayList;
@@ -18,7 +20,7 @@ public class MemoryIslandDAO implements IslandDAO {
                 16192,
                 -17.533306,
                 -149.8386601,
-                "Polynésie française"
+                new Country("Polynésie française")
         );
         add(moorea);
 
@@ -30,10 +32,10 @@ public class MemoryIslandDAO implements IslandDAO {
                 9350,
                 18.1262854,
                 -65.4400985,
-                "Porto Rico");
+                new Country("Porto Rico"));
         add(island2);
 
-        Island crete = new Island(3, "Crète", "https://www.poupadou.com/blog/wp-content/uploads/2018/10/Mpalos-plage-en-Cr%C3%A8te-scaled.jpg", 8450, 621340, 35.3084952, 24.4633423, "Grèce");
+        Island crete = new Island(3, "Crète", "https://www.poupadou.com/blog/wp-content/uploads/2018/10/Mpalos-plage-en-Cr%C3%A8te-scaled.jpg", 8450, 621340, 35.3084952, 24.4633423, new Country("Grèce"));
         add(crete);
 
         Island maui = new Island(
@@ -44,7 +46,7 @@ public class MemoryIslandDAO implements IslandDAO {
                 144444,
                 20.8029568,
                 -156.3106833,
-                "USA");
+                new Country("USA"));
         add(maui);
 
         Island tsushima = new Island(
@@ -55,7 +57,7 @@ public class MemoryIslandDAO implements IslandDAO {
                 39716,
                 34.2053717,
                 129.2946547,
-                "japon"
+                new Country("japon")
         );
         add(tsushima);
 
@@ -67,7 +69,7 @@ public class MemoryIslandDAO implements IslandDAO {
                 294560,
                 13.1500331,
                 -59.5250305,
-                "Barbade"
+                new Country("Barbade")
         );
         add(barbade);
 
@@ -79,7 +81,7 @@ public class MemoryIslandDAO implements IslandDAO {
                 12210000,
                 48.8499198,
                 2.6370411,
-                "France"
+                new Country("France")
         );
         add(ileDeFrance);
 
@@ -92,7 +94,7 @@ public class MemoryIslandDAO implements IslandDAO {
                 7404,
                 21.1344895,
                 -157.0071539,
-                "Etats-Unis"
+                new Country("Etats-Unis")
         );
         add(molokai);
 
@@ -102,7 +104,7 @@ public class MemoryIslandDAO implements IslandDAO {
                 24090,
                 1654796,
                 40.121310,
-                9.010441, "Italie");
+                9.010441, new Country("Italie"));
         add(island9);
 
 
@@ -113,7 +115,7 @@ public class MemoryIslandDAO implements IslandDAO {
                 11000,
                 65.86558450066828,
                 -71.1130507111078,
-                "Canada");
+                new Country("Canada"));
         add(island10);
 
         Island palawan = new Island(
@@ -124,7 +126,7 @@ public class MemoryIslandDAO implements IslandDAO {
                 430000,
                 9.6481,
                 118.732,
-                "Philippines");
+                new Country("Philippines"));
         add(palawan);
 
         Island island12 = new Island(
@@ -135,7 +137,7 @@ public class MemoryIslandDAO implements IslandDAO {
                 1230000,
                 26.5707754,
                 128.0255901,
-                "Préfecture d'Okinawa, Japon"
+                new Country("Préfecture d'Okinawa, Japon")
         );
         add(island12);
 
@@ -147,7 +149,7 @@ public class MemoryIslandDAO implements IslandDAO {
                 378,
                 48.8461,
                 -2.999,
-                "France");
+                new Country("France"));
         add(brehat);
 
         Island gotland = new Island(14L,
@@ -157,7 +159,7 @@ public class MemoryIslandDAO implements IslandDAO {
                 58595,
                 57.30,
                 18.30,
-                "Sweden");
+                new Country("Sweden"));
         add(gotland);
 
         Island djerba = new Island(
@@ -168,7 +170,7 @@ public class MemoryIslandDAO implements IslandDAO {
                 163726,
                 33.48,
                 10.51,
-                "Tunisie"
+                new Country("Tunisie")
         );
         add(djerba);
 
@@ -180,7 +182,7 @@ public class MemoryIslandDAO implements IslandDAO {
                 926276,
                 -17.713371,
                 178.065033,
-                "Fiji"
+                new Country("Fiji")
         );
         add(malaMala);
     }};

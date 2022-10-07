@@ -1,7 +1,13 @@
 package com.example.demo.model;
 
+import com.example.demo.dao.entity.Country;
+import jakarta.persistence.*;
+
+@Entity
 public class Island {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
     private String pictureUrl;
@@ -9,12 +15,15 @@ public class Island {
     private long inhabitants;
     private double latitude;
     private double longitude;
-    private String country;
+
+    @ManyToOne
+    @JoinColumn(name = "country_fk")
+    private Country country;
 
     public Island() {
     }
 
-    public Island(String name, String pictureUrl, double surface, long inhabitants, double latitude, double longitude, String country) {
+    public Island(String name, String pictureUrl, double surface, long inhabitants, double latitude, double longitude, Country country) {
         this.name = name;
         this.pictureUrl = pictureUrl;
         this.surface = surface;
@@ -24,7 +33,7 @@ public class Island {
         this.country = country;
     }
 
-    public Island(long id, String name, String pictureUrl, double surface, long inhabitants, double latitude, double longitude, String country) {
+    public Island(long id, String name, String pictureUrl, double surface, long inhabitants, double latitude, double longitude, Country country) {
         this.id = id;
         this.name = name;
         this.pictureUrl = pictureUrl;
@@ -105,11 +114,11 @@ public class Island {
         this.longitude = longitude;
     }
 
-    public String getCountry() {
+    public Country getCountry() {
         return country;
     }
 
-    public void setCountry(String country) {
+    public void setCountry(Country country) {
         this.country = country;
     }
 }

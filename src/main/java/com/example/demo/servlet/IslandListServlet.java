@@ -2,9 +2,7 @@ package com.example.demo.servlet;
 
 
 import com.example.demo.dao.DaoFactory;
-import com.example.demo.dao.JdbcIslandDAO;
 import com.example.demo.model.Island;
-import com.example.demo.dao.MemoryIslandDAO;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;

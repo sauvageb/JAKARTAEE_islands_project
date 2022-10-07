@@ -2,7 +2,8 @@ package com.example.demo.api;
 
 import com.example.demo.dao.DaoFactory;
 import com.example.demo.dao.IslandDAO;
-import com.example.demo.dao.MemoryIslandDAO;
+import com.example.demo.dao.entity.Country;
+import com.example.demo.dao.memory.MemoryIslandDAO;
 import com.example.demo.model.Island;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.Context;
@@ -71,7 +72,7 @@ public class IslandResource {
     public Response update(@PathParam("islandId") long idParam, Island islandDto) {
         Optional<Island> optionalIsland = islandDAO.findById(idParam);
         if (optionalIsland.isPresent()) {
-            new MemoryIslandDAO().edit(new Island(idParam, islandDto.getName(), islandDto.getPictureUrl(), 0, 0, 0, 0, ""));
+            new MemoryIslandDAO().edit(new Island(idParam, islandDto.getName(), islandDto.getPictureUrl(), 0, 0, 0, 0, new Country()));
             return getAll();
         } else {
             return Response.status(Response.Status.NOT_FOUND).build();

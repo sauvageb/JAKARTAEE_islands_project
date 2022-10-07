@@ -1,5 +1,5 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<footer class="text-muted py-5 mt-4 bg-dark">
+<footer class="text-muted py-5 mt-5 bg-dark">
     <div class="container">
         <p class="float-end mb-1">
             <a href="#" class="btn btn-secondary">

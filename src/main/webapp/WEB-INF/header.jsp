@@ -10,10 +10,17 @@
             </a>
 
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="${pageContext.request.contextPath}/islands" class="nav-link px-2 text-secondary">Home</a>
+                <li>
+                    <a href="${pageContext.request.contextPath}/islands" class="nav-link px-2 text-secondary">Home</a>
+                </li>
+                <li>
+                    <a href="${pageContext.request.contextPath}/countries" class="nav-link px-2 text-secondary">Countries</a>
                 </li>
                 <li><a href="${pageContext.request.contextPath}/islands/add"
-                       class="nav-link px-2 text-secondary">Add</a></li>
+                       class="nav-link px-2 text-secondary">Add Island</a></li>
+
+                <li><a href="${pageContext.request.contextPath}/countries/add"
+                       class="nav-link px-2 text-secondary">Add Country</a></li>
             </ul>
 
             <c:if test="${isMenu}">

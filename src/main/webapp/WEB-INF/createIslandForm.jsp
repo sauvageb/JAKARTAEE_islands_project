@@ -51,7 +51,12 @@
 
             <div class="mb-3">
                 <label for="country" class="form-label">Country</label>
-                <input id="country" type="text" name="country" class="form-control" required>
+                <select id="country" name="countryId" required class="form-control">
+                    <c:forEach items="${countries}" var="country">
+                        <option value="${country.id}">${country.name}</option>
+                    </c:forEach>
+                </select>
+
             </div>
 
             <div class="d-flex justify-content-end">

@@ -1,4 +1,4 @@
-package com.example.demo.dao;
+package com.example.demo.dao.jdbc;
 
 import java.io.IOException;
 import java.io.InputStream;

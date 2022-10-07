@@ -1,5 +1,7 @@
-package com.example.demo.dao;
+package com.example.demo.dao.jdbc;
 
+import com.example.demo.dao.IslandDAO;
+import com.example.demo.dao.entity.Country;
 import com.example.demo.model.Island;
 
 import java.sql.*;
@@ -43,7 +45,7 @@ public class JdbcIslandDAO implements IslandDAO {
             pst.setDouble(4, island.getInhabitants());
             pst.setDouble(5, island.getLatitude());
             pst.setDouble(6, island.getLongitude());
-            pst.setString(7, island.getCountry());
+            pst.setLong(7, island.getCountry().getId());
             return pst.execute();
 
         } catch (SQLException e) {
@@ -79,8 +81,8 @@ public class JdbcIslandDAO implements IslandDAO {
         long inhabitants = rs.getLong("inhabitants");
         double latitude = rs.getDouble("latitude");
         double longitude = rs.getDouble("longitude");
-        String country = rs.getString("country");
-        return new Island(id, name, pictureUrl, surface, inhabitants, latitude, longitude, country);
+        String countryName = rs.getString("country");
+        return new Island(id, name, pictureUrl, surface, inhabitants, latitude, longitude, new Country(countryName));
     }
 
     @Override
@@ -110,7 +112,7 @@ public class JdbcIslandDAO implements IslandDAO {
             pst.setDouble(4, island.getInhabitants());
             pst.setDouble(5, island.getLatitude());
             pst.setDouble(6, island.getLongitude());
-            pst.setString(7, island.getCountry());
+            pst.setString(7, island.getCountry().getName());
             pst.setLong(8, island.getId());
 
             return pst.execute();

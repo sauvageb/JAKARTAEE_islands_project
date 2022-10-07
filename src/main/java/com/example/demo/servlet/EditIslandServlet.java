@@ -1,6 +1,7 @@
 package com.example.demo.servlet;
 
 import com.example.demo.dao.DaoFactory;
+import com.example.demo.dao.entity.Country;
 import com.example.demo.model.Island;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -38,7 +39,7 @@ public class EditIslandServlet extends HttpServlet {
         String inhabitants = req.getParameter("inhabitants");
         String latitude = req.getParameter("latitude");
         String longitude = req.getParameter("longitude");
-        String country = req.getParameter("country");
+        String countryName = req.getParameter("country");
 
         DaoFactory.getIslandDAO().edit(new Island(
                 id,
@@ -48,7 +49,7 @@ public class EditIslandServlet extends HttpServlet {
                 Long.parseLong(inhabitants),
                 Double.parseDouble(latitude),
                 Double.parseDouble(longitude),
-                country));
+                new Country(countryName)));
 
         resp.sendRedirect(req.getContextPath() + "/islands");
     }

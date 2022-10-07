@@ -39,6 +39,20 @@
             <version>8.0.30</version>
         </dependency>
 
+        <!-- Hibernate JPA Persistence -->
+        <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+        <dependency>
+            <groupId>org.hibernate.orm</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>6.0.0.Final</version>
+        </dependency>
+        <!---->
+
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator-cdi</artifactId>
+            <version>7.0.5.Final</version>
+        </dependency>
 
         <!--  JSTL Library     -->
         <dependency>
